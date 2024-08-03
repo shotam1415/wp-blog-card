@@ -16,7 +16,7 @@ import { registerBlockType } from '@wordpress/blocks';
 /**
  * Internal dependencies
  */
-import Edit from './edit';
+import edit from './edit';
 import metadata from './block.json';
 import save from './save';
 
@@ -26,24 +26,17 @@ import save from './save';
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
 
- const calendarIcon = (
-    <svg
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-hidden="true"
-        focusable="false"
-    >
-        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm.5 16c0 .3-.2.5-.5.5H5c-.3 0-.5-.2-.5-.5V7h15v12zM9 10H7v2h2v-2zm0 4H7v2h2v-2zm4-4h-2v2h2v-2zm4 0h-2v2h2v-2zm-4 4h-2v2h2v-2zm4 0h-2v2h2v-2z"></path>
-    </svg>
+const icon = (
+    <svg xmlns="http://www.w3.org/2000/svg" width="undefined" height="undefined" viewBox="0 0 750 750"><path fill="currentColor" d="M718 1q10 0 17 6t6 17v510q0 10-6 16t-17 7H23q-10 0-16-7t-7-16V24Q0 14 7 7t16-6h695zM93 325h208v-69H93v69zm393 70H93v69h393v-69zM649 94h-70v69h70V94z" /></svg>
 );
- 
 
 
-registerBlockType( metadata.name, {
-	/**
-	 * @see ./edit.js
-	 */
-	 save,
-	edit: Edit,
-	icon: calendarIcon,
-} );
+
+registerBlockType(metadata.name, {
+    /**
+     * @see ./edit.js
+     */
+    save,
+    edit,
+    icon,
+});
