@@ -1,0 +1,97 @@
+/*!****************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/editor.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************/
+/* A Modern CSS Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+ul[role=list], ol[role=list] {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+img, picture {
+  max-width: 100%;
+  display: block;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.blogCard {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  text-decoration: none;
+  -moz-column-gap: 12px;
+       column-gap: 12px;
+  padding: 8px;
+  border-style: solid;
+  background-color: #fff;
+}
+.blogCard:focus {
+  outline: 0px solid #000;
+}
+.blogCard:focus-visible {
+  outline: 2px solid #000;
+}
+.blogCard:hover .blogCard__thumbnail img {
+  transform: scale(1.1);
+}
+.blogCard .blogCard__thumbnail {
+  overflow: hidden;
+}
+.blogCard .blogCard__thumbnail img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+  transform: scale(1);
+}
+.blogCard .blogCard__text {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+}
+.blogCard .blogCard__text .blogCard__text-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.blogCard .blogCard__text .blogCard__text-description {
+  font-size: 0.7rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
