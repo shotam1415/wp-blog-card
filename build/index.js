@@ -59,6 +59,7 @@ function Edit({
   setAttributes
 }) {
   const {
+    fontColor,
     backgroundColor,
     borderColor,
     borderWidth,
@@ -151,8 +152,31 @@ function Edit({
     })
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Styles', 'blog-card')
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ColorPalette, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Background color', 'blog-card'),
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "font Color"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ColorPalette, {
+    colors: [{
+      name: 'テーマカラー',
+      color: '#413d69'
+    }, {
+      name: 'ダークブルー',
+      color: '#1A237E'
+    }, {
+      name: 'ダークグリーン',
+      color: '#1B5E20'
+    }, {
+      name: 'ダークイエロー',
+      color: '#F57F17'
+    }, {
+      name: 'ダークグレー',
+      color: '#212121'
+    }, {
+      name: 'ブラック',
+      color: '#000000'
+    }],
+    value: fontColor,
+    onChange: color => setAttributes({
+      fontColor: color
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Background Color"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ColorPalette, {
     colors: [{
       name: 'テーマカラー',
       color: '#413d69'
@@ -176,8 +200,7 @@ function Edit({
     onChange: color => setAttributes({
       backgroundColor: color
     })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ColorPalette, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Border color', 'blog-card'),
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Border Color"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ColorPalette, {
     colors: [{
       name: 'テーマカラー',
       color: '#413d69'
@@ -227,6 +250,7 @@ function Edit({
     className: "blogCard",
     onClick: preventClick,
     style: {
+      color: fontColor,
       backgroundColor: backgroundColor,
       borderColor: borderColor,
       borderWidth: borderWidth + 'px',
@@ -369,7 +393,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/blog-card","version":"0.1.0","title":"Blog Card","category":"widgets","description":"blogcard","example":{},"attributes":{"backgroundColor":{"type":"string","default":"#fff"},"borderColor":{"type":"string","default":"#413d69"},"borderWidth":{"type":"string","default":1},"borderRadius":{"type":"string","default":4},"newTab":{"type":"boolean","default":false},"url":{"type":"string"},"title":{"type":"string","default":"タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。"},"description":{"type":"string","default":"ディスクリプションが入ります。ディスクリプションが入ります。ディスクリプションが入ります。ディスクリプションが入ります。"},"og_image":{"type":"string","default":"https://placehold.jp/200x105.png"}},"supports":{"color":{"background":false,"text":true},"html":false,"typography":{"fontSize":true}},"textdomain":"blog-card","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/blog-card","version":"0.1.0","title":"Blog Card","category":"widgets","description":"blogcard","example":{},"attributes":{"fontColor":{"type":"string","default":"#000"},"backgroundColor":{"type":"string","default":"#fff"},"borderColor":{"type":"string","default":"#413d69"},"borderWidth":{"type":"string","default":1},"borderRadius":{"type":"string","default":4},"newTab":{"type":"boolean","default":false},"url":{"type":"string"},"title":{"type":"string","default":"タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。"},"description":{"type":"string","default":"ディスクリプションが入ります。ディスクリプションが入ります。ディスクリプションが入ります。ディスクリプションが入ります。"},"og_image":{"type":"string","default":"https://placehold.jp/200x105.png"}},"supports":{"color":{"background":false,"text":true},"html":false,"typography":{"fontSize":true}},"textdomain":"blog-card","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php"}');
 
 /***/ })
 

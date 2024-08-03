@@ -8,6 +8,10 @@
   "description": "blogcard",
   "example": {},
   "attributes": {
+    "fontColor": {
+      "type": "string",
+      "default": "#000"
+    },
     "backgroundColor": {
       "type": "string",
       "default": "#fff"

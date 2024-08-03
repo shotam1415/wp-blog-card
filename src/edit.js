@@ -31,7 +31,7 @@ import { PanelBody, TextControl, ToggleControl, RangeControl, ColorPalette } fro
  */
 
 export default function Edit({ attributes, setAttributes }) {
-    const { backgroundColor, borderColor, borderWidth, borderRadius, newTab, url, title, description, og_image } = attributes;
+    const { fontColor, backgroundColor, borderColor, borderWidth, borderRadius, newTab, url, title, description, og_image } = attributes;
 
 
     // ブロックロードのとき、fallbackCurrentYear がまだ設定されていなければ、
@@ -150,8 +150,21 @@ export default function Edit({ attributes, setAttributes }) {
                     />
                 </PanelBody>
                 <PanelBody title={__('Styles', 'blog-card')}>
+                    <p>font Color</p>
                     <ColorPalette
-                        label={__('Background color', 'blog-card')}
+                        colors={[
+                            { name: 'テーマカラー', color: '#413d69' },
+                            { name: 'ダークブルー', color: '#1A237E' },
+                            { name: 'ダークグリーン', color: '#1B5E20' },
+                            { name: 'ダークイエロー', color: '#F57F17' },
+                            { name: 'ダークグレー', color: '#212121' },
+                            { name: 'ブラック', color: '#000000' }
+                        ]}
+                        value={fontColor}
+                        onChange={(color) => setAttributes({ fontColor: color })}
+                    />
+                    <p>Background Color</p>
+                    <ColorPalette
                         colors={[
                             { name: 'テーマカラー', color: '#413d69' },
                             { name: 'ライトブルー', color: 'rgba(33, 150, 243, 0.5)' },
@@ -163,8 +176,8 @@ export default function Edit({ attributes, setAttributes }) {
                         value={backgroundColor}
                         onChange={(color) => setAttributes({ backgroundColor: color })}
                     />
+                    <p>Border Color</p>
                     <ColorPalette
-                        label={__('Border color', 'blog-card')}
                         colors={[
                             { name: 'テーマカラー', color: '#413d69' },
                             { name: 'ダークブルー', color: '#1A237E' },
@@ -192,7 +205,7 @@ export default function Edit({ attributes, setAttributes }) {
 
             </InspectorControls>
             <div {...useBlockProps()}>
-                <a href={url || "/"} target={newTab ? '_blank' : '_self'} className='blogCard' onClick={preventClick} style={{ backgroundColor: backgroundColor, borderColor: borderColor, borderWidth: borderWidth + 'px', borderRadius: borderRadius + 'px' }}>
+                <a href={url || "/"} target={newTab ? '_blank' : '_self'} className='blogCard' onClick={preventClick} style={{ color: fontColor, backgroundColor: backgroundColor, borderColor: borderColor, borderWidth: borderWidth + 'px', borderRadius: borderRadius + 'px' }}>
                     <div className='blogCard__thumbnail'>
                         <img className='' src={og_image} alt='' />
                     </div>
